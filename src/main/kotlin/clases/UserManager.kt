@@ -57,7 +57,7 @@ class UserManager( var name: String,  var password: String) : User() {
 // validar usuario
         if (isValidUser(usuario, userPassword)) {
             println()
-            println("***********************Bienvenido $usuario********************************")
+            println("*********************** Bienvenido $usuario ********************************")
             compra.inicioCompras()
         } else
             println("usuario/contraseña  incorrecto..intenta nuevamente.")

@@ -1,5 +1,6 @@
 package clases
 
+import java.lang.NumberFormatException
 import java.util.*
 
 class Canasta {
@@ -32,12 +33,17 @@ class Canasta {
                     continue
                 }
                 listOfProduct.add(productoAComprar as Producto)
-                println("CUANTOS DESEAS COMPRAR ?")
-                val cantidad: Int = readLine()!!.toInt()
-                println("================ Carrito de compras ===============================")
-                producto.totalProducts(listOfProduct, cantidad)
-                println("===============================================")
+                try {
+                    println("CUANTOS DESEAS COMPRAR ?")
+                    val cantidad: Int = readLine()!!.toInt()
 
+                    println("================ Carrito de compras ===============================")
+                    producto.totalProducts(listOfProduct, cantidad)
+                    println("===============================================")
+                } catch (ex: NumberFormatException) {
+                    print("Digite una cantidad numérica porfavor")
+                    continue
+                }
                 if (listOfProduct.isNotEmpty()) {
                     println("SI DESEAS REALIZAR LA COMPRA ESCRIBE OK,\nSI DESEA CONTINUAR COMPRANDO ESCRIBA CUALQUIER CARACTER Y PRESIONE ENTER")
                     opcProd = readLine()!!.toString().uppercase()
