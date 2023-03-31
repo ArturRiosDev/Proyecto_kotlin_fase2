@@ -17,10 +17,12 @@ class UserManager( var name: String,  var password: String) : User() {
             val user1: UserManager = UserManager("marco", "123")
             val user2: UserManager = UserManager("juan", "345")
             val user3: UserManager = UserManager("angie.", "111")
+            val user4: UserManager = UserManager("guille", "666")
 
             activeUsers.add(user1)
             activeUsers.add(user2)
             activeUsers.add(user3)
+            activeUsers.add(user4)
         }
 
     }
